@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws" xmlns:intf="http://ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="consultarDadosConta">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+      <element name="senha" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultarDadosContaResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="consultarDadosContaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="abrirConta">
+    <complexType>
+     <sequence>
+      <element name="nome" type="xsd:string"/>
+      <element name="senha" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="abrirContaResponse">
+    <complexType>
+     <sequence>
+      <element name="abrirContaReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="fecharConta">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+      <element name="senha" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="fecharContaResponse">
+    <complexType>
+     <sequence>
+      <element name="fecharContaReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deposito">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+      <element name="senha" type="xsd:int"/>
+      <element name="valor" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="depositoResponse">
+    <complexType>
+     <sequence>
+      <element name="depositoReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="saque">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+      <element name="senha" type="xsd:int"/>
+      <element name="valor" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="saqueResponse">
+    <complexType>
+     <sequence>
+      <element name="saqueReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="fecharContaRequest">
+
+      <wsdl:part element="impl:fecharConta" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="depositoResponse">
+
+      <wsdl:part element="impl:depositoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="fecharContaResponse">
+
+      <wsdl:part element="impl:fecharContaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="saqueResponse">
+
+      <wsdl:part element="impl:saqueResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="abrirContaRequest">
+
+      <wsdl:part element="impl:abrirConta" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="abrirContaResponse">
+
+      <wsdl:part element="impl:abrirContaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="saqueRequest">
+
+      <wsdl:part element="impl:saque" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="depositoRequest">
+
+      <wsdl:part element="impl:deposito" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarDadosContaResponse">
+
+      <wsdl:part element="impl:consultarDadosContaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarDadosContaRequest">
+
+      <wsdl:part element="impl:consultarDadosConta" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ServicoConta">
+
+      <wsdl:operation name="consultarDadosConta">
+
+         <wsdl:input message="impl:consultarDadosContaRequest" name="consultarDadosContaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultarDadosContaResponse" name="consultarDadosContaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="abrirConta">
+
+         <wsdl:input message="impl:abrirContaRequest" name="abrirContaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:abrirContaResponse" name="abrirContaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="fecharConta">
+
+         <wsdl:input message="impl:fecharContaRequest" name="fecharContaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:fecharContaResponse" name="fecharContaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deposito">
+
+         <wsdl:input message="impl:depositoRequest" name="depositoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:depositoResponse" name="depositoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="saque">
+
+         <wsdl:input message="impl:saqueRequest" name="saqueRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:saqueResponse" name="saqueResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServicoContaSoapBinding" type="impl:ServicoConta">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="consultarDadosConta">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultarDadosContaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultarDadosContaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="abrirConta">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="abrirContaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="abrirContaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="fecharConta">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="fecharContaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="fecharContaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deposito">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="depositoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="depositoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="saque">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="saqueRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="saqueResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServicoContaService">
+
+      <wsdl:port binding="impl:ServicoContaSoapBinding" name="ServicoConta">
+
+         <wsdlsoap:address location="http://localhost:8080/WSBanco/services/ServicoConta"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
